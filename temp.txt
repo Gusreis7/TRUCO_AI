@@ -1,0 +1,30 @@
+def distribui_cartas(deck):
+    qtd_cartas = 3
+    cartas_selecionadas = deck[0:qtd_cartas]
+    deck = deck[qtd_cartas:]
+    all_letters = True
+    letras = 0
+    print("Antes")
+    print(deck)
+    print("Cartas selecionadas")
+    print(cartas_selecionadas)
+    while all_letters:
+        for carta in cartas_selecionadas:
+            insignia = carta[0]
+            if type(insignia) != int:
+                letras+=1
+        if letras == 3:
+            all_letters = True
+            letras = 0
+            print('3 letras')
+            cartas_selecionadas = deck[0:qtd_cartas]
+            deck = deck[qtd_cartas:]
+
+            qtd_cartas+=qtd_cartas
+        else:
+            all_letters = False
+    print("Depois")
+    print(deck)
+
+    print("Selecionadas")
+    print(cartas_selecionadas)
